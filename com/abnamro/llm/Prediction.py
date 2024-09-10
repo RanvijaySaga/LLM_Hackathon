@@ -6,7 +6,10 @@ from com.abnamro.llm.TrainModel import train_model
 def predict(texts):
     global model, label_encoder
     count = 0
-
+    
+    # try to use same model again
+    # this portion needs to be replaced to  pick the previously trained model and add more behaviour data and not to replace it.
+    
     if count < 1:
         model, label_encoder = train_model()
 
@@ -21,7 +24,7 @@ def predict(texts):
     return [label_encoder.inverse_transform([pred])[0] for pred in predictions]
 
 
-# Example usage
+# use the created model to predict next behaviour
 print(predict(["HBO"]))
 print(predict(["Jumbo"]))
 print(predict(["ZARA"]))
