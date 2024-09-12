@@ -3,6 +3,7 @@
 
 -- DROP TABLE public.account_overview;
 
+
 CREATE TABLE public.account_overview (
 	account_number varchar(50) NOT NULL,
 	transaction_date date NOT NULL,
@@ -11,9 +12,10 @@ CREATE TABLE public.account_overview (
 	payment_method varchar(50) NULL,
 	merchant varchar(50) NULL,
 	description_lines varchar(500) NULL,
-	expenset_type varchar(50) NULL,
-	CONSTRAINT account_overview_pkey PRIMARY KEY (account_number)
+	expense_type varchar(50) NULL,
+	expense_category varchar(1) NULL
 );
+
 
 
 -- Drop table
