@@ -126,14 +126,6 @@ if __name__ == "__main__":
     # Connect to the database
     account_service.connect()
 
-    # Insert a new record into the account_overview table
-    """
-    account_service.insert_record(account_number="NL72ABNA054758761", transaction_date="20240329", indicator="C",
-                                  amount=3000.00, payment_method="SEPA OVERBOEKING", merchant="Unknown",
-                                  description_lines="SEPA Overboeking                 IBAN: NL21ABNA0249151187        BIC: ABNANL2A                    Naam: SS SINGH",
-                                  expense_type="Others", expense_category="M")
-                                  
-                                  """
     # Path to the CSV file
     csv_file_path = Constants.CSV_FILE_PATH
 
