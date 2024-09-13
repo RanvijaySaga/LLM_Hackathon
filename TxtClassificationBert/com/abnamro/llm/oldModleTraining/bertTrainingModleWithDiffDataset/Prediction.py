@@ -1,6 +1,6 @@
 import torch
-from com.abnamro.llm.Tokenization import get_tokenizer
-from com.abnamro.llm.TrainModel import train_model
+from com.abnamro.llm.oldModleTraining.bertTrainingModleWithDiffDataset.Tokenization import get_tokenizer
+from com.abnamro.llm.oldModleTraining.bertTrainingModleWithDiffDataset.TrainModel import train_model
 
 
 

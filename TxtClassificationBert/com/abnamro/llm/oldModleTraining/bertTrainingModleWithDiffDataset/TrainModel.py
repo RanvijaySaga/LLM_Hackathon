@@ -2,10 +2,10 @@ from torch.utils.data import DataLoader
 from transformers import BertForSequenceClassification, BertTokenizer
 from transformers import Trainer, TrainingArguments
 
-from com.abnamro.llm.LoadDataSet import convert_category_to_numeric
-from com.abnamro.llm.TextClassificationDataset import TextClassificationDataset
+from com.abnamro.llm.oldModleTraining.bertTrainingModleWithDiffDataset.LoadDataSet import convert_category_to_numeric
+from com.abnamro.llm.oldModleTraining.bertTrainingModleWithDiffDataset.TextClassificationDataset import TextClassificationDataset
 
-data_file = "E:/LLM/pycharm/LLM_Hackathon/TxtClassificationBert/resources/TrainingData.csv"
+data_file = "/resources/TrainingData.csv"
 bert_classifier_name = 'GroNLP/bert-base-dutch-cased'
 
 
@@ -20,7 +20,6 @@ def get_training_args():
         logging_dir='./logs',
         logging_steps=10,
     )
-
 
 def get_trainer(model, dataset):
     return Trainer(
