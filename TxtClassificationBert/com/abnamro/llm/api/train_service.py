@@ -102,9 +102,9 @@ def train_model(csv_file):
     print(df)
 
     # Split the data into training and validation sets
-    #train_texts, val_texts, train_labels, val_labels = train_test_split(
+    # train_texts, val_texts, train_labels, val_labels = train_test_split(
     #    df['Merchant'], df['label'], test_size=0.2, random_state=42
-    #)
+    # )
     train_texts = df['Merchant']
     train_labels = df['label']
 
@@ -121,10 +121,10 @@ def train_model(csv_file):
 
     # Create datasets and data loaders
     train_dataset = ExpenseDataset(train_texts.tolist(), train_labels.tolist(), tokenizer, MAX_LEN)
-  #  val_dataset = ExpenseDataset(val_texts.tolist(), val_labels.tolist(), tokenizer, MAX_LEN)
+    #  val_dataset = ExpenseDataset(val_texts.tolist(), val_labels.tolist(), tokenizer, MAX_LEN)
 
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-   # val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE)
+    # val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE)
 
     # Load pre-trained BERT model for classification
     num_labels = len(df['ExpenseType'].unique())
@@ -140,8 +140,8 @@ def train_model(csv_file):
         print(f'Epoch {epoch + 1}/{EPOCHS}')
         train_acc, train_loss = train_epoch(model, train_loader, optimizer, device)
         print(f'Train loss: {train_loss}, accuracy: {train_acc}')
-     #   val_acc, val_loss = eval_model(model, val_loader, device)
-     #   print(f'Validation loss: {val_loss}, accuracy: {val_acc}')
+    #   val_acc, val_loss = eval_model(model, val_loader, device)
+    #   print(f'Validation loss: {val_loss}, accuracy: {val_acc}')
 
     # Save the model and label encoder in the trained_model folder
     model_dir = "trained_model"
@@ -160,8 +160,6 @@ app = Flask(__name__)
 # Define the training endpoint
 @app.route('/train', methods=['POST'])
 def train():
-
-
     """
     adding the code to receive the file as intput parameter in post body, and save it
 
@@ -184,5 +182,5 @@ def train():
 
 # Start the Flask app
 if __name__ == '__main__':
-    #app.run(debug=True, host='127.0.0.1', port=5001)
+    # app.run(debug=True, host='127.0.0.1', port=5001)
     train()
