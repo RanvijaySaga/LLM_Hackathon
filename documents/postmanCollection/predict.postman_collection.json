@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "189a15b6-5350-4231-b7fb-bec9d08cf051",
+		"name": "predict",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "predict-albert-hign",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\":\"NL72ABNA0123456788\",\n    \"transaction_date\":\"20240330\",\n    \"indicator\":\"D\",\n    \"amount\":50.43,\n    \"payment_method\":\"Google Pay\",\n    \"merchant\":\"ALBERT HEIJN\",\n    \"description\": \"BEA, Google Pay ALBERT HEIJN 2242,PAS304 NR:584LN9, 30.03.24/15:54  ALMERE\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.2:5002/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"2"
+					],
+					"port": "5002",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict-jumbo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\":\"NL72ABNA0123456788\",\n    \"transaction_date\":\"20240410\",\n    \"indicator\":\"D\",\n    \"amount\":15.49,\n    \"payment_method\":\"Google Pay\",\n    \"merchant\":\"Jumbo\",\n    \"description\": \"BEA, Google Pay Kruidvat 3280,PAS304 NR:1HDN0D, 10.04.24/16:53 ALMERE\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.2:5002/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"2"
+					],
+					"port": "5002",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict-Kruidvat-wrong",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\":\"NL72ABNA0123456788\",\n    \"transaction_date\":\"20240410\",\n    \"indicator\":\"D\",\n    \"amount\":15.49,\n    \"payment_method\":\"Google Pay\",\n    \"merchant\":\"Kruidvat 3280\",\n    \"description\": \"BEA, Google Pay Kruidvat 3280,PAS304 NR:1HDN0D, 10.04.24/16:53 ALMERE\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.2:5002/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"2"
+					],
+					"port": "5002",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict-Decathalon-unknown-data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\":\"NL72ABNA0123456788\",\n    \"transaction_date\":\"20240414\",\n    \"indicator\":\"D\",\n    \"amount\": 13.43,\n    \"payment_method\":\"iDEAL\",\n    \"merchant\":\"Decathalon\",\n    \"description\": \"SEPA iDEAL    IBAN: NL61ABNA0811086593        BIC: ABNANL2A Naam: Tikkie Omschrijving: 000810404241 00300 16454790216 Bitt NL35ABNA0104063858 Tikkie    Kenmerk: 09-04-2024 20:28 0030016454790216\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.2:5002/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"2"
+					],
+					"port": "5002",
+					"path": [
+						"predict"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict-ZEEMAN ALMERE KORTE PR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account_number\":\"NL72ABNA0123456788\",\n    \"transaction_date\":\"20240414\",\n    \"indicator\":\"D\",\n    \"amount\": 13.43,\n    \"payment_method\":\"iDEAL\",\n    \"merchant\":\"ZEEMAN ALMERE KORTE PR\",\n    \"description\": \"BEA, Google Pay       C&A 102,PAS304       NR:KJ5204, 30.03.24/13:13        ALMERE\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.2:5002/predict",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"2"
+					],
+					"port": "5002",
+					"path": [
+						"predict"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "BEA, Google Pay Zeeman Almere 01342,PAS304 NR:00006954, 30.03.24/12:42 ALMERE\n",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
